@@ -30,9 +30,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   }
 
 
-
-  // ||  || empty($password)
-
   // Controllo validità email
   if(!isValidEmail($email)){
     $errors['email'] =  "Indirizzo email non valido";
@@ -48,7 +45,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $errors['password'] =  "La password deve avere almeno 6 caratteri";
   }elseif($confPassword != $password){
     $errors['confPassword'] =  "Le password devono conincidere";
+  }elseif (preg_match('/\s/', $password)) {
+    $errors['password'] = "La password non deve contenere spazi.";
   }
+
 
   // controllo unicità email
   $emailUni = emailUnicity($email, $conn);

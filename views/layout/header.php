@@ -38,25 +38,22 @@ function getHref($uri){
             <li class="nav-item">
               <a class="nav-link" href="<?php getHref('php-login-register/private.php') ?>">Pagina Privata</a>
             </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="<?php getHref('php-login-register/logout.php') ?>">Logout</a>
+            </li>
             <?php endif; ?>
 
             <?php if(!$logged): ?>
             <li class="nav-item">
               <a class="nav-link" href="<?php getHref('php-login-register/login.php') ?>">Login</a>
             </li>
-            <?php endif; ?>
 
-            <?php if(!$logged): ?>
             <li class="nav-item">
               <a class="nav-link" href="<?php getHref('php-login-register/register.php') ?>">Registrati</a>
             </li>
             <?php endif; ?>
-            
-            <?php if($logged): ?>
-            <li class="nav-item">
-              <a class="nav-link" href="<?php getHref('php-login-register/logout.php') ?>">Logout</a>
-            </li>
-            <?php endif; ?>
+
           </ul>
         </div>
       </div>
